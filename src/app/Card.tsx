@@ -2,6 +2,7 @@
 
 import React from 'react'
 import styled from 'styled-components'
+import { Glass } from './StyledComponents'
 
 type ListContent = {
     title: string,
@@ -13,11 +14,7 @@ type CardProps = {
     list: Array<ListContent>,
 }
 
-const StyledCard = styled.div`
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(17, 25, 40, 0.75);
-    border-radius: 12px;
+const StyledCard = styled(Glass)`
     border: 1px solid rgba(255, 255, 255, 0.251);
     padding: 0px 20px 10px;
 `

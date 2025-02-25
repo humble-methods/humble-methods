@@ -6,7 +6,7 @@ import Hero from "./Hero"
 
 export default function Home() {
   return (
-    <div >
+    <div style={{ minHeight: '100%' }}>
       <Hero />
       <TimeSinkers />
       <HowItWorks />

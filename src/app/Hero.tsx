@@ -9,7 +9,7 @@ const Section = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: calc(100vh - 115px);
     width: 100%;
 `
 
@@ -34,7 +34,6 @@ const ImageContainer = styled.div`
     position: absolute;
     z-index: -1;
     @media (width <= 1024px) {
-        position: fixed;
         overflow: hidden;
     }
 `

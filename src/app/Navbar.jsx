@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Nav = styled.nav`
@@ -25,7 +26,7 @@ const IconButton = styled.button`
     min-width: 48px;
 
     &:active{
-        background-color: var(--background-light);
+        background-color: var(--foreground-dark);
     }
 `
 
@@ -34,6 +35,7 @@ const NavLink = styled(Link)`
     font-size: 10rem;
     line-height: 10rem;
     text-transform: uppercase;
+    border-bottom: 1px solid var(--foreground-dark);
 
     @media (width <= 1024px){
         font-size: 5rem;
@@ -52,6 +54,12 @@ const NavLinkContainer = styled.div`
 
 export default function Navbar() {
     const [isExpanded, setIsExpanded] = useState(false);
+    const pathname = usePathname()
+
+    useEffect(()=>{
+        setIsExpanded(false)
+    }, [pathname])
+
 
     return (
         <Nav>
@@ -67,8 +75,10 @@ export default function Navbar() {
                     </IconButton>
                 </div>
                 <NavLinkContainer isexpanded={isExpanded.toString()}>
-                    <NavLink
-                        href="/case_studies">
+                    <NavLink href="/about">
+                        About
+                    </NavLink>
+                    <NavLink href="/case_studies">
                         Case Studies
                     </NavLink>
                 </NavLinkContainer>
