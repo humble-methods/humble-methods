@@ -1,12 +1,12 @@
 import React from "react";
-import HowItWorks from "@/app/HowItWorks";
+import HowItWorks from "@/pages/HowItWorks";
 import TimeSinkers from "./TimeSinkers";
 import Hero from "./Hero"
 
 
 export default function Home() {
   return (
-    <div style={{ minHeight: '100%' }}>
+    <div>
       <Hero />
       <TimeSinkers />
       <HowItWorks />

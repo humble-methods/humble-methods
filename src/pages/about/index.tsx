@@ -1,7 +1,6 @@
-import "./styles.css"
 import React from 'react'
 
-export default async function About() {
+export default function About() {
     return (
         <section className="about">
             <div className="about_wrapper">

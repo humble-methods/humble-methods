@@ -1,7 +1,6 @@
-"use client"
 import React from "react"
 import styled from "styled-components"
-import { Glass } from "./StyledComponents"
+import { Glass } from "../StyledComponents"
 
 const howItWorksMap = [
     {

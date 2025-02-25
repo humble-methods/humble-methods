@@ -1,8 +1,6 @@
-"use client"
-
 import React from 'react'
 import styled from 'styled-components'
-import { Glass } from './StyledComponents'
+import { Glass } from '../StyledComponents'
 
 type ListContent = {
     title: string,
@@ -27,7 +25,7 @@ const Container = styled.div`
     }
 `
 
-export default function Card({ list, section }: CardProps) {
+export default function Card({ list = [], section }: CardProps) {
     return (
         <Container>
             <h2>{section}</h2>
