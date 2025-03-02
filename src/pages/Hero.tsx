@@ -40,6 +40,16 @@ const ImageContainer = styled.div`
     }
 `
 
+const ButtonContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    button {
+        margin-top: 30;
+        width: 200px;
+    }
+`
+
 export default function Hero() {
     return (
         <Section>
@@ -60,9 +70,9 @@ export default function Hero() {
                 <br />
                 Just business workflow automation that works behind the scenes.
             </p>
-            <div style={{ display: 'flex', width: "100%" }}>
+            <ButtonContainer>
                 <button style={{ marginTop: 30 }}>Get Started</button>
-            </div>
+            </ButtonContainer>
             <ImageContainer>
                 <StyledImage src={background} alt="background" />
             </ImageContainer>
