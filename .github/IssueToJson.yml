@@ -1,0 +1,62 @@
+name: Process Issue to JSON Files
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  process-issue:
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.title, '[JSON]') # Optional filter to only process issues with [JSON] in title
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm install @actions/github @actions/core fs-extra
+        
+      - name: Process issue and create files
+        run: node ./scripts/process-issue.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          REPO_OWNER: ${{ github.repository_owner }}
+          REPO_NAME: ${{ github.event.repository.name }}
+          
+      - name: Create Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(bot): add json files from issue #${{ github.event.issue.number }}"
+          title: "Add JSON files from issue #${{ github.event.issue.number }}"
+          body: |
+            This PR was automatically created from issue #${{ github.event.issue.number }}
+            
+            It adds the JSON files extracted from the issue description.
+            
+            Closes #${{ github.event.issue.number }}
+          branch: issue-${{ github.event.issue.number }}-json-files
+          base: main
+          
+      - name: Auto-merge Pull Request
+        if: steps.create-pr.outputs.pull-request-number
+        run: |
+          gh pr merge ${{ steps.create-pr.outputs.pull-request-number }} --merge --auto
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Close Issue
+        if: steps.create-pr.outputs.pull-request-number
+        run: |
+          gh issue close ${{ github.event.issue.number }} --comment "Processed this issue and created PR #${{ steps.create-pr.outputs.pull-request-number }} which has been merged."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
