@@ -24,7 +24,6 @@ jobs:
       - name: Process issue and create files
         run: node ./scripts/process-issues.js
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_BODY: ${{ github.event.issue.body }}
           REPO_OWNER: ${{ github.repository_owner }}
@@ -43,6 +42,8 @@ jobs:
             It adds the JSON files extracted from the issue description.
             
             Closes #${{ github.event.issue.number }}
+          add-paths: |
+            ./src/resources/transcript
           branch: issue-${{ github.event.issue.number }}-json-files
           base: main
           

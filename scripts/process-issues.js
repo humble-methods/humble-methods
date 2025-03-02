@@ -38,13 +38,13 @@ function processJsonContent(jsonContent) {
   }
 
   // Create the target directory if it doesn't exist
-  const targetDir = path.join("project", "src", "resources", "transcript")
+  const targetDir = path.join("src", "resources", "transcript")
   fs.ensureDirSync(targetDir)
 
   // Process each object in the array
   jsonArray.forEach((jsonObj) => {
     // Generate a filename based on the object properties or index
-    const filename = jsonObj.slug
+    const filename = `${jsonObj.slug}.json`
     const filePath = path.join(targetDir, filename)
 
     // Write the JSON file
