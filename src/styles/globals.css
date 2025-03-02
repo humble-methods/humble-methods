@@ -89,6 +89,8 @@ footer {
   justify-content: space-between;
   min-height: 100vh;
   width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 * {
@@ -160,6 +162,11 @@ button {
   border-radius: 5px;
   &:hover {
     background-color: var(--foreground-dark);
+  }
+
+  @media (width <= 1024px) {
+    flex-grow: 1;
+    max-width: none;
   }
 }
 

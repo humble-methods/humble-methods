@@ -1,14 +1,15 @@
+import fs from 'fs'
 import React from 'react'
 import parse from 'html-react-parser';
+import { File } from '../types';
 
-export default async function Page({
-    params,
+export default function Page({
+    file,
 }: {
-    params: Promise<{ slug: string }>
+    file: File
 }) {
-    const slug = (await params).slug
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    const { content, tags, ownerUsername, url, timestamp, title } = require(`../../../resources/transcript/${slug}`)
+
+    const { content, tags, ownerUsername, url, timestamp, title } = file
     const date = new Date(timestamp)
 
     return (
@@ -24,4 +25,32 @@ export default async function Page({
             <a href={url} target='_blank'>Source</a>
         </div>
     )
+}
+
+type Params = {
+    slug: string
+}
+
+type Context = {
+    params: Params
+}
+
+export async function getStaticProps({ params: { slug } }: Context) {
+    // List of files in blgos folder
+    const file = JSON.parse(fs.readFileSync(`./src/resources/transcript/${slug}.json`, 'utf8'))
+
+    return { props: { file } }
+}
+
+export async function getStaticPaths() {
+    const filesInProjects = fs.readdirSync('./src/resources/transcript')
+    const paths = filesInProjects.map(file => {
+        const filename = file.slice(0, file.indexOf('.'))
+        return { params: { slug: filename } }
+    })
+
+    return {
+        paths,
+        fallback: false
+    }
 }

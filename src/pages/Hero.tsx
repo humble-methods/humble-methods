@@ -21,11 +21,11 @@ const StyledImage = styled(Image)`
     position: relative;
 
     @media (width <= 1024px) {
-        width: 300vw;
-        height: 100vh;
-        top: 0;
-        left: -100px;
-        transform: rotate(18deg);
+        height: 300vh;
+        width: 1400vw;
+        left: -620vw;
+        top: 100vh;
+        transform: scaleX(1) rotate(70deg);
     }
 `
 
@@ -33,7 +33,10 @@ const ImageContainer = styled.div`
     position: absolute;
     z-index: -1;
     @media (width <= 1024px) {
+        width: 100%;
         overflow: hidden;
+        height: 700vh;
+        top:0;
     }
 `
 
@@ -57,7 +60,9 @@ export default function Hero() {
                 <br />
                 Just business workflow automation that works behind the scenes.
             </p>
-            <button style={{ marginTop: 30, width: 200 }}>Get Started</button>
+            <div style={{ display: 'flex', width: "100%" }}>
+                <button style={{ marginTop: 30 }}>Get Started</button>
+            </div>
             <ImageContainer>
                 <StyledImage src={background} alt="background" />
             </ImageContainer>
