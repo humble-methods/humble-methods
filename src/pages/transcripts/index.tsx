@@ -5,10 +5,14 @@ import { Glass } from "../../StyledComponents"
 import Link from 'next/link'
 import { File } from '../../types/types'
 
-const Container = styled(Glass)`
-    padding: 20px 20px 20px;
-    margin-top: 20px;
+const StyledLink = styled(Link)`
     width: 49%;
+`
+
+const Container = styled(Glass)`
+    margin-top: 20px;
+    padding: 20px;
+    height: 100%;
     @media (width <=1024px ) {
         width: 100%
     }
@@ -43,8 +47,8 @@ export default function Page({
                 {fileList.map(({ title, subtitle, slug, timestamp, tags }) => {
                     const date = new Date(timestamp)
                     return (
-                        <Container key={title}>
-                            <Link href={`/transcripts/${slug}`} >
+                        <StyledLink href={`/transcripts/${slug}`} key={title}>
+                            <Container>
                                 <p>{date.toDateString()}</p>
                                 <h2>{title}</h2>
                                 <p>{subtitle}</p>
@@ -53,8 +57,8 @@ export default function Page({
                                         return <label key={slug + tag}>{tag}</label>
                                     })}
                                 </div>
-                            </Link>
-                        </Container>
+                            </Container>
+                        </StyledLink>
                     )
                 })}
             </div>

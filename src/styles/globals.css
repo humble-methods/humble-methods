@@ -7,10 +7,12 @@
 E0E1DD */
 
 :root {
-  --background: #E0E1DD;
+  /* --background: #E0E1DD; */
+  --background: #0A141F;
   --background-light: #1B263B;
   --foreground-dark: #9BABC0;
-  --foreground: #28282c;
+  --foreground: #E0E1DD;
+  /* --foreground: #28282c; */
   --action: #1f89db;
   --action-light: #5eb4f6;
 }
