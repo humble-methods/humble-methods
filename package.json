@@ -11,6 +11,9 @@
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0",
+    "fs-extra": "^11.3.0",
     "html-react-parser": "^5.2.2",
     "next": "15.1.7",
     "react": "^19.0.0",
