@@ -1,7 +1,7 @@
 import fs from 'fs'
 import React from 'react'
 import parse from 'html-react-parser';
-import { File } from '../types';
+import { File } from '../../../types/types';
 
 export default function Page({
     file,

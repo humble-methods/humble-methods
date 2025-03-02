@@ -3,7 +3,7 @@ import styled from "styled-components"
 import React from 'react'
 import { Glass } from "../../StyledComponents"
 import Link from 'next/link'
-import { File } from './types'
+import { File } from '../../types/types'
 
 const Container = styled(Glass)`
     padding: 20px 20px 20px;
