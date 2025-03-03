@@ -21,11 +21,14 @@ const Container = styled.div`
 const IconButton = styled.button`
     background-color: transparent;
     border-radius: 0;
-    width: 48px;
     min-width: 48px;
+    padding: 10px;
 
     &:active{
         background-color: var(--foreground-dark);
+    }
+    @media (width <= 1024px){
+        flex-grow: 0.2;
     }
 `
 
@@ -37,9 +40,17 @@ const NavLink = styled(Link)`
     border-bottom: 1px solid var(--foreground-dark);
 
     @media (width <= 1024px){
-        font-size: 5rem;
+        font-size: 4rem;
         line-height: 5rem;
     }
+`
+
+const NavFixedContainer = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
 `
 
 const NavLinkContainer = styled.div`
@@ -49,6 +60,12 @@ const NavLinkContainer = styled.div`
 
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
+`
+
+const Logo = styled.span`
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 20px;
 `
 
 export default function Navbar() {
@@ -63,22 +80,22 @@ export default function Navbar() {
     return (
         <Nav>
             <Container isexpanded={isExpanded.toString()} >
-                <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+                <NavFixedContainer>
                     <Link href="/">
-                        <h1 style={{ marginTop: 20 }}>
+                        <Logo>
                             Humble Methods
-                        </h1>
+                        </Logo>
                     </Link>
                     <IconButton onClick={() => (setIsExpanded((prev) => !prev))}>
                         Menu
                     </IconButton>
-                </div>
+                </NavFixedContainer>
                 <NavLinkContainer isexpanded={isExpanded.toString()}>
                     <NavLink href="/about">
                         About
                     </NavLink>
-                    <NavLink href="/case_studies">
-                        Case Studies
+                    <NavLink href="/showroom">
+                        Showroom
                     </NavLink>
                 </NavLinkContainer>
             </Container>

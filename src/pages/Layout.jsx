@@ -14,6 +14,11 @@ export default function Layout({ children }) {
                     <h3>Humble Methods</h3>
                     <p>© {today.getFullYear()} Humble Methods LLC</p>
                 </div>
+                <div>
+                    <a href="mailto:hello@humblemethods.com">
+                    hello@humblemethods.com
+                    </a>
+                </div>
             </footer>
         </div>
     );

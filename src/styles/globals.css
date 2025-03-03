@@ -80,9 +80,18 @@ nav {
 }
 
 footer {
+  display: flex;
   margin-bottom: 20px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.251)
+  border-top: 1px solid rgba(255, 255, 255, 0.251);
+  backdrop-filter: blur(32px) saturate(100%);
+  -webkit-backdrop-filter: blur(32px) saturate(100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.251);
+}
+@media (width <= 1024px) {
+  footer{
+    display: block;
+  }
 }
 
 .layout_wrapper {
@@ -113,9 +122,11 @@ h1, h2, h3, h4, h5, h6, p, a, label, button {
     color: var(--foreground)
 }
 
+/* hsl(331, 90%, 56%) */
+
 h1 {
-  font-size: 3rem;
-  line-height: 4rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
   margin-top: 40px;
   margin-bottom: 10px;
 }
@@ -126,9 +137,15 @@ h2 {
   margin-bottom: 10px;
 }
 
+h5 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
 p {
   max-width: 1000px;
-  line-height: 1.4rem;
+  line-height: 1.5rem;
   margin-bottom: 20px;
 }
 
@@ -156,8 +173,9 @@ button {
   max-width: 300px;
   min-width: 150px;
   height: 45px;
-  font-size: 16px;
-  text-transform: uppercase;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: capitalize;
   background-color: var(--action);
   border: 0;
   cursor: pointer;
@@ -191,6 +209,12 @@ button {
   h2 {
     font-size: 1.75rem;
     line-height: 2.5rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.3rem;
   }
 
   p {
