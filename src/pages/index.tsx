@@ -2,11 +2,17 @@ import React from "react";
 import HowItWorks from "@/pages/HowItWorks";
 import TimeSinkers from "./TimeSinkers";
 import Hero from "./Hero"
+import styled from "styled-components";
 
+const StyledHome = styled.div`
+  h1 {
+    font-size: 3rem!important;
+  }
+`
 
 export default function Home() {
   return (
-    <div>
+    <StyledHome>
       <Hero />
       <TimeSinkers />
       <HowItWorks />
@@ -17,6 +23,6 @@ export default function Home() {
         <p>⚡ Run Your Business with Less Effort – More efficiency, less stress.</p>
         <p style={{ textAlign: 'center' }}>Automation isn’t about replacing work—it’s about removing friction so you can focus on what really matters.</p>
       </section>
-    </div>
+    </StyledHome>
   );
 }

@@ -42,6 +42,14 @@ const NavLink = styled(Link)`
     }
 `
 
+const NavFixedContainer = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+`
+
 const NavLinkContainer = styled.div`
     height: ${({ isexpanded }) => isexpanded === 'true' ? '100vh' : '0'};
     display: flex;
@@ -49,6 +57,12 @@ const NavLinkContainer = styled.div`
 
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
+`
+
+const Logo = styled.span`
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 20px;
 `
 
 export default function Navbar() {
@@ -63,22 +77,22 @@ export default function Navbar() {
     return (
         <Nav>
             <Container isexpanded={isExpanded.toString()} >
-                <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>
+                <NavFixedContainer>
                     <Link href="/">
-                        <h1 style={{ marginTop: 20 }}>
+                        <Logo>
                             Humble Methods
-                        </h1>
+                        </Logo>
                     </Link>
                     <IconButton onClick={() => (setIsExpanded((prev) => !prev))}>
                         Menu
                     </IconButton>
-                </div>
+                </NavFixedContainer>
                 <NavLinkContainer isexpanded={isExpanded.toString()}>
                     <NavLink href="/about">
                         About
                     </NavLink>
-                    <NavLink href="/case_studies">
-                        Case Studies
+                    <NavLink href="/showroom">
+                        Showroom
                     </NavLink>
                 </NavLinkContainer>
             </Container>

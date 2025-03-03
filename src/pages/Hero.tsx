@@ -57,7 +57,7 @@ export default function Hero() {
                 style={{
                     margin: '0 0 20px',
                     textTransform: 'uppercase',
-                    textAlign: 'center'
+                    textAlign: 'center',
                 }}>
                 We Automate the Repetitive.
                 <br />
