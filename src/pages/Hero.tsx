@@ -32,11 +32,12 @@ const StyledImage = styled(Image)`
 const ImageContainer = styled.div`
     position: absolute;
     z-index: -1;
+    top: -100px;
     @media (width <= 1024px) {
         width: 100%;
         overflow: hidden;
         height: 700vh;
-        top:0;
+        top: 0;
     }
 `
 
@@ -44,9 +45,31 @@ const ButtonContainer = styled.div`
     display: flex;
     justify-content: center;
     width: 100%;
-    button {
+    a {
+        flex-grow: 1;
         margin-top: 30;
         width: 200px;
+
+        max-width: 300px;
+        min-width: 150px;
+        height: 45px;
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 45px;
+        text-transform: capitalize;
+        background-color: var(--action);
+        border: 0;
+        cursor: pointer;
+        border-radius: 5px;
+        color: var(--forground);
+        text-align: center;
+        &:hover {
+            background-color: var(--foreground-dark);
+        }
+
+        @media (width <= 1024px) { 
+            max-width: none;
+        }
     }
 `
 
@@ -71,7 +94,7 @@ export default function Hero() {
                 Just business workflow automation that works behind the scenes.
             </p>
             <ButtonContainer>
-                <button style={{ marginTop: 30 }}>Get Started</button>
+                <a href="mailto:hello@humblemethods.com">Get In Touch</a>
             </ButtonContainer>
             <ImageContainer>
                 <StyledImage src={background} alt="background" />

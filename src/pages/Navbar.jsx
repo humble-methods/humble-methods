@@ -21,11 +21,14 @@ const Container = styled.div`
 const IconButton = styled.button`
     background-color: transparent;
     border-radius: 0;
-    width: 48px;
     min-width: 48px;
+    padding: 10px;
 
     &:active{
         background-color: var(--foreground-dark);
+    }
+    @media (width <= 1024px){
+        flex-grow: 0.2;
     }
 `
 
@@ -37,7 +40,7 @@ const NavLink = styled(Link)`
     border-bottom: 1px solid var(--foreground-dark);
 
     @media (width <= 1024px){
-        font-size: 5rem;
+        font-size: 4rem;
         line-height: 5rem;
     }
 `
