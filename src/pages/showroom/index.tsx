@@ -78,7 +78,10 @@ const ShowcaseContainer = styled.div`
         max-width: 100%;
     }
     margin: 100px 0;
-    /* background-color: pink; */
+    h2 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
 `
 
 const InvertedImage = styled(Image)`
@@ -98,11 +101,11 @@ export default function CaseStudies() {
                     <h2>Instagram Reels Transcription Engine</h2>
                     <p>Effortlessly transform Instagram Reels into polished blog posts with automated transcription, content structuring, SEO optimization, and seamless publishing – saving time and ensuring consistency for creators and marketers.</p>
                     <div style={{ textWrap: 'nowrap', display: 'flex', flexWrap: 'wrap', marginBottom: 20 }}>
-                        <label>Apify</label>
-                        <label>Make.com</label>
-                        <label>Google Sheets</label>
-                        <label>ChatGPT</label>
-                        <label>JavaScript</label>
+                        <span className="tags">Apify</span>
+                        <span className="tags">Make.com</span>
+                        <span className="tags">Google Sheets</span>
+                        <span className="tags">ChatGPT</span>
+                        <span className="tags">JavaScript</span>
                     </div>
                     <Link href="/transcripts">
                         See Results

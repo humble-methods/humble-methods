@@ -11,13 +11,15 @@ export default function Layout({ children }) {
             </main>
             <footer>
                 <div>
-                    <h3>Humble Methods</h3>
-                    <p>© {today.getFullYear()} Humble Methods LLC</p>
-                </div>
-                <div>
-                    <a href="mailto:hello@humblemethods.com">
-                    hello@humblemethods.com
-                    </a>
+                    <div>
+                        <h3>Humble Methods</h3>
+                        <p>© {today.getFullYear()} Humble Methods LLC</p>
+                    </div>
+                    <div>
+                        <a href="mailto:hello@humblemethods.com">
+                        hello@humblemethods.com
+                        </a>
+                    </div>
                 </div>
             </footer>
         </div>

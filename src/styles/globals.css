@@ -15,6 +15,9 @@ E0E1DD */
   /* --foreground: #28282c; */
   --action: #1f89db;
   --action-light: #5eb4f6;
+
+  --border-radius: 12px;
+  --button-radius: 8px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -50,9 +53,10 @@ body {
     margin: 0;
 }
 
-main, footer > div {
+main > div {
   margin: 0 auto;
   max-width: 1280px;
+  width: 100%;
 }
 
 main {
@@ -64,6 +68,12 @@ main {
 
 main > * {
   padding-bottom: 80px;
+}
+
+@media (width <= 1024px) {
+  main{
+    margin-top: 70px;
+  }
 }
 
 nav {
@@ -80,16 +90,22 @@ nav {
 }
 
 footer {
-  display: flex;
-  margin-bottom: 20px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.251);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(32px) saturate(100%);
   -webkit-backdrop-filter: blur(32px) saturate(100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.251);
 }
+
+footer > div {
+  margin: 0 auto;
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media (width <= 1024px) {
-  footer{
+  footer > div{
     display: block;
   }
 }
@@ -116,10 +132,25 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, label, button {
+h1, h2, h3, h4, h5, h6, p, a, label, button, li, ul, ol {
     margin: 0;
     font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
     color: var(--foreground)
+}
+
+li {
+  list-style-position: inside;
+  text-indent: -2.4rem;
+  padding-left: 2.4rem;
+  margin-bottom: 10px;
+}
+
+ol {
+  list-style-type: decimal-leading-zero;
+  margin-bottom: 20px;
+}
+ul{
+  list-style-type: disc;
 }
 
 /* hsl(331, 90%, 56%) */
@@ -127,14 +158,10 @@ h1, h2, h3, h4, h5, h6, p, a, label, button {
 h1 {
   font-size: 2rem;
   line-height: 2.5rem;
-  margin-top: 40px;
-  margin-bottom: 10px;
 }
 
 h2 {
   line-height: 2rem;
-  margin-top: 40px;
-  margin-bottom: 10px;
 }
 
 h5 {
@@ -149,7 +176,7 @@ p {
   margin-bottom: 20px;
 }
 
-label {
+.tags {
   font-size: 0.85rem;
   line-height: 1.2rem;
   font-weight: bold;
@@ -179,7 +206,7 @@ button {
   background-color: var(--action);
   border: 0;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 8px;
   &:hover {
     background-color: var(--foreground-dark);
   }

@@ -2,6 +2,19 @@ import fs from 'fs'
 import React from 'react'
 import parse from 'html-react-parser';
 import { File } from '../../../types/types';
+import styled from 'styled-components';
+
+const Container = styled.div`
+    h1 {
+        margin-bottom: 20px;
+    }
+    h2 {
+        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+    .tags {
+    }
+`
 
 export default function Page({
     file,
@@ -9,21 +22,20 @@ export default function Page({
     file: File
 }) {
 
-    const { content, tags, ownerUsername, url, timestamp, title } = file
+    const { content, tags, ownerUserName, ownerUsername, url, timestamp } = file
     const date = new Date(timestamp)
 
     return (
-        <div>
-            <h1>{title}</h1>
-            <div style={{ display: 'flex' }}>
+        <Container>
+            <p>{date.toDateString()}, by {ownerUserName || ownerUsername}</p>
+            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                 {tags.map((tag: string) => {
-                    return <label key={tag}>{tag}</label>
+                    return <span className="tags" key={tag} style={{ textWrap: 'nowrap' }}>{tag}</span>
                 })}
             </div>
-            <p>{date.toDateString()}, by {ownerUsername}</p>
             {parse(content)}
             <a href={url} target='_blank'>Source</a>
-        </div>
+        </Container>
     )
 }
 

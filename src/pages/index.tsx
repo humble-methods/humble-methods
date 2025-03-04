@@ -66,7 +66,7 @@ export default function Home() {
       <HowItWorks />
       <section style={{ marginTop: 200 }}>
         <Container>
-          <h1 style={{ marginBottom: 30 }}>Why Automate?</h1>
+          <h1 style={{ marginTop: 40, marginBottom: 30 }}>Why Automate?</h1>
           <h5>💡 Reduce Mistakes & Missed Deadlines – Get things done right, every time.</h5>
           <h5>🚀 Save Hours Every Week – Focus on high-impact work.</h5>
           <h5>⚡ Run Your Business with Less Effort – More efficiency, less stress.</h5>

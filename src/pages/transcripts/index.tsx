@@ -70,10 +70,10 @@ export default function Page({
 
     return (
         <div>
-            <h1 style={{ marginTop: 0 }}>Instagram Reels Transcription Engine</h1>
+            <h1 style={{ marginBottom: 20 }}>Instagram Reels Transcription Engine</h1>
             <p>This automation converts Instagram Reels into polished blog posts with minimal effort. It starts by detecting new Reels, extracting audio, and transcribing speech using a tool like Whisper AI. The raw text is then processed with ChatGPT, where it’s cleaned, structured, and formatted into a well-organized article with proper headings and summaries. Finally, the refined content is inserted into a blog template, optimized for SEO, and automatically published to a page on this site. This workflow saves time, ensures consistency, and makes repurposing social media content seamless for creators and marketers.</p>
             <BenefitsSection>
-                <h2 style={{ marginTop: 0 }}>Key Benefits</h2>
+                <h2>Key Benefits</h2>
                 <TopContainerWrapper>
                     <TopContainer>
                         <h2>Time Savings</h2>
@@ -102,7 +102,7 @@ export default function Page({
                 </TopContainerWrapper>
             </BenefitsSection>
             <section>
-                <h2 style={{ marginTop: 0 }}>Transcripts</h2>
+                <h2>Transcripts</h2>
                 <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
                     {fileList.map(({ title, subtitle, slug, timestamp, tags }) => {
                         const date = new Date(timestamp)
@@ -110,11 +110,11 @@ export default function Page({
                             <StyledLink href={`/transcripts/${slug}`} key={title}>
                                 <Container>
                                     <p>{date.toDateString()}</p>
-                                    <h2>{title}</h2>
-                                    <p>{subtitle}</p>
+                                    <h2 style={{ marginBlock: 10 }}>{title}</h2>
+                                    <p style={{ fontWeight: 400 }}>{subtitle}</p>
                                     <div style={{ textWrap: 'nowrap', display: 'flex', flexWrap: 'wrap' }}>
                                         {tags.map((tag: string) => {
-                                            return <label key={slug + tag}>{tag}</label>
+                                            return <span className="tags" key={slug + tag}>{tag}</span>
                                         })}
                                     </div>
                                 </Container>

@@ -6,6 +6,12 @@ const Section = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+    h1 {
+        margin-bottom: 10px;
+    }
+    h2 {
+        margin-bottom: 10px;
+    }
 `
 
 const Container = styled.div`
@@ -23,7 +29,7 @@ export default function TimeSinkers() {
     return (
         <Section>
             <h1>The Biggest Time-Sinkers </h1>
-            <p style={{ textAlign: 'center' }}>Most businesses lose 10+ hours a week on repetitive tasks—time that could be spent growing, creating, or innovating. Here are some of the biggest culprits:</p>
+            <p style={{ textAlign: 'center', marginBottom: 40 }}>Most businesses lose 10+ hours a week on repetitive tasks—time that could be spent growing, creating, or innovating. Here are some of the biggest culprits:</p>
             <Container style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <Card
                     section="Administrative"
