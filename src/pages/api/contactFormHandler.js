@@ -9,7 +9,7 @@ export default async function handler (req, res) {
   const requestBody = JSON.parse(req.body)
 
   try{
-    const res = await fetch(
+    const contactUsRes = await fetch(
       `${process.env.URL}/.netlify/functions/emails/contact-us`,
       {
         headers: {
@@ -31,7 +31,7 @@ export default async function handler (req, res) {
       }
     );
 
-    if(res.status !== 200 || res.ok !== true) {
+    if(contactUsRes.status !== 200) {
       return res.status(500).json({message: "Something went wrong!"})
     }
 
