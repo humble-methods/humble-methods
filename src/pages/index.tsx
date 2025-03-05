@@ -3,7 +3,8 @@ import HowItWorks from "@/pages/HowItWorks";
 import TimeSinkers from "./TimeSinkers";
 import Hero from "./Hero"
 import styled from "styled-components";
-import { Glass } from "@/StyledComponents";
+import { ButtonContainer, Glass } from "@/StyledComponents";
+import Link from "next/link";
 
 const StyledHome = styled.div`
   h1 {
@@ -66,13 +67,17 @@ export default function Home() {
       <HowItWorks />
       <section style={{ marginTop: 200 }}>
         <Container>
-          <h1 style={{ marginBottom: 30 }}>Why Automate?</h1>
+          <h1 style={{ marginTop: 40, marginBottom: 30 }}>Why Automate?</h1>
           <h5>💡 Reduce Mistakes & Missed Deadlines – Get things done right, every time.</h5>
           <h5>🚀 Save Hours Every Week – Focus on high-impact work.</h5>
           <h5>⚡ Run Your Business with Less Effort – More efficiency, less stress.</h5>
           <h2>Automation isn’t about replacing work</h2>
           <h5>It’s about removing friction so you can focus on what really matters.</h5>
-          <button>Get In Touch</button>
+          <ButtonContainer style={{ marginTop: 20, marginBottom: 50 }}>
+            <Link href="/contact">
+              Get In Tocuh
+            </Link>
+          </ButtonContainer>
         </Container>
       </section>
     </StyledHome>

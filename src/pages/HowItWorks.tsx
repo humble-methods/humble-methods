@@ -47,13 +47,13 @@ const Number = styled.h2`
     font-size: 7rem;
     line-height: 1rem;
     padding-bottom: 40px;
-
+    margin-top: 40px;
 `
 
 export default function HowItWorks() {
     return (
         <section style={{ marginTop: 200, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h1 style={{ marginBottom: 50 }}>How It Works (3-Step Process)</h1>
+            <h1 style={{ marginBottom: 30 }}>How It Works (3-Step Process)</h1>
             {howItWorksMap.map(({ title, description }, index) => {
                 return (
                     <Step key={title}>

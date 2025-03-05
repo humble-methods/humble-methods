@@ -1,5 +1,4 @@
 import "@/styles/globals.css";
-import "@/styles/about.css";
 import type { AppProps } from "next/app";
 import Layout from "./Layout";
 import { GoogleAnalytics } from "@next/third-parties/google"

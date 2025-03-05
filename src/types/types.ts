@@ -6,5 +6,6 @@ export type File = {
     tags: Array<string>,
     content: string,
     ownerUsername: string,
+    ownerUserName: string,
     url: string,
 }

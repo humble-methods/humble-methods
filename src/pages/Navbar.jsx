@@ -33,15 +33,17 @@ const IconButton = styled.button`
 `
 
 const NavLink = styled(Link)`
-    margin-bottom: 15;
+    margin-bottom: 20px;
     font-size: 10rem;
     line-height: 10rem;
     text-transform: uppercase;
     border-bottom: 1px solid var(--foreground-dark);
+    padding: 20px 0;
 
     @media (width <= 1024px){
         font-size: 4rem;
         line-height: 5rem;
+        padding: 0;
     }
 `
 
@@ -91,11 +93,14 @@ export default function Navbar() {
                     </IconButton>
                 </NavFixedContainer>
                 <NavLinkContainer isexpanded={isExpanded.toString()}>
+                    <NavLink href="/showroom">
+                        Showroom
+                    </NavLink>
                     <NavLink href="/about">
                         About
                     </NavLink>
-                    <NavLink href="/showroom">
-                        Showroom
+                    <NavLink href="/contact">
+                        Contact
                     </NavLink>
                 </NavLinkContainer>
             </Container>
