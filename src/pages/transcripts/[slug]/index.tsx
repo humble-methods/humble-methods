@@ -27,7 +27,7 @@ export default function Page({
 
     return (
         <Container>
-            <p>{date.toDateString()}, by {ownerUserName || ownerUsername}</p>
+            <p>{date.toDateString()}, by {ownerUsername || ownerUserName}</p>
             <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                 {tags.map((tag: string) => {
                     return <span className="tags" key={tag} style={{ textWrap: 'nowrap' }}>{tag}</span>
