@@ -22,12 +22,12 @@ export default function Page({
     file: File
 }) {
 
-    const { content, tags, ownerUserName, ownerUsername, url, timestamp } = file
+    const { content, tags, ownerUserName, ownerUsername, ownerFullName, url, timestamp } = file
     const date = new Date(timestamp)
 
     return (
         <Container>
-            <p>{date.toDateString()}, by {ownerUsername || ownerUserName}</p>
+            <p>{date.toDateString()}, by {ownerUsername || ownerUserName || ownerFullName}</p>
             <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                 {tags.map((tag: string) => {
                     return <span className="tags" key={tag} style={{ textWrap: 'nowrap' }}>{tag}</span>

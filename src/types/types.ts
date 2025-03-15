@@ -7,5 +7,6 @@ export type File = {
     content: string,
     ownerUsername: string,
     ownerUserName: string,
+    ownerFullName: string,
     url: string,
 }
