@@ -3,6 +3,7 @@ import React from 'react'
 import parse from 'html-react-parser';
 import { File } from '../../../types/types';
 import styled from 'styled-components';
+import Head from 'next/head';
 
 const Container = styled.div`
     h1 {
@@ -22,11 +23,17 @@ export default function Page({
     file: File
 }) {
 
-    const { content, tags, ownerUserName, ownerUsername, ownerFullName, url, timestamp } = file
+    const { content, tags, ownerUserName, ownerUsername, ownerFullName, url, timestamp, title, subtitle, hashtags } = file
     const date = new Date(timestamp)
+    const keywords = [...tags, ...hashtags].join(', ')
 
     return (
         <Container>
+            <Head>
+                <title>{title} | {date.toDateString()} | by {ownerUsername || ownerUserName || ownerFullName}</title>
+                <meta name="description" content={title + '|' + subtitle} />
+                <meta name="keywords" content={keywords} />
+            </Head>
             <p>{date.toDateString()}, by {ownerUsername || ownerUserName || ownerFullName}</p>
             <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                 {tags.map((tag: string) => {

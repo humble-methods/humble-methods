@@ -4,6 +4,7 @@ import React from 'react'
 import { Glass } from "../../StyledComponents"
 import Link from 'next/link'
 import { File } from '../../types/types'
+import Head from 'next/head'
 
 const StyledLink = styled(Link)`
     width: 49%;
@@ -70,6 +71,10 @@ export default function Page({
 
     return (
         <div>
+            <Head>
+                <title>Instagram Transcripts</title>
+                <meta name="description" content="Instagram Reels Transcription Engine" />
+            </Head>
             <h1 style={{ marginBottom: 20 }}>Instagram Reels Transcription Engine</h1>
             <p>This automation converts Instagram Reels into polished blog posts with minimal effort. It starts by detecting new Reels, extracting audio, and transcribing speech using a tool like Whisper AI. The raw text is then processed with ChatGPT, where it’s cleaned, structured, and formatted into a well-organized article with proper headings and summaries. Finally, the refined content is inserted into a blog template, optimized for SEO, and automatically published to a page on this site. This workflow saves time, ensures consistency, and makes repurposing social media content seamless for creators and marketers.</p>
             <BenefitsSection>
