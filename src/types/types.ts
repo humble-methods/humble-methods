@@ -9,4 +9,5 @@ export type File = {
     ownerUserName: string,
     ownerFullName: string,
     url: string,
+    hashtags: Array<string>
 }

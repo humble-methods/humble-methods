@@ -3,6 +3,7 @@ import React from 'react'
 import { Glass } from "../../StyledComponents"
 import Link from "next/link"
 import Image from "next/image"
+import Head from "next/head"
 
 const HeroContainer = styled(Glass)`
     padding: 10px 20px;
@@ -91,6 +92,10 @@ const InvertedImage = styled(Image)`
 export default function CaseStudies() {
     return (
         <div className="case_studies" style={{ width: "100%" }}>
+            <Head>
+                <title>Showroom</title>
+                <meta name="description" content="Checkout all of our latest hacks and creative projects." />
+            </Head>
             <section>
                 <HeroContainer>
                     <h1 style={{ maxWidth: 600, lineHeight: '2.5rem' }}>Checkout all of our latest hacks and creative projects.</h1>

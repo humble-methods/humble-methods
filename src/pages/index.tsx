@@ -5,6 +5,7 @@ import Hero from "./Hero"
 import styled from "styled-components";
 import { ButtonContainer, Glass } from "@/StyledComponents";
 import Link from "next/link";
+import Head from "next/head";
 
 const StyledHome = styled.div`
   h1 {
@@ -62,6 +63,10 @@ const Container = styled(Glass)`
 export default function Home() {
   return (
     <StyledHome>
+      <Head>
+        <title>Humble Methods: Automate the Repetitive</title>
+        <meta name="description" content="Optimize business operations with automated workflows. Humble Methods leverages AI, Zapier, JavaScript and Python to reduce manual tasks, minimize errors, and improve efficiency. Learn more." />
+      </Head>
       <Hero />
       <TimeSinkers />
       <HowItWorks />

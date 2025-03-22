@@ -2,6 +2,7 @@ import React from 'react'
 import ContactForm from './ContactForm'
 import FloatingCircles from '@/components/molecules/Circles'
 import styled from 'styled-components'
+import Head from 'next/head'
 
 const Container = styled.div`
     align-self: center;
@@ -31,6 +32,10 @@ const Container = styled.div`
 export default function Contact() {
     return (
         <Container>
+            <Head>
+                <title>Contact Humble Methods</title>
+                <meta name="description" content="Contact Humble Methods for more information on AI, automation, and more." />
+            </Head>
             <h1>Let&apos;s chat!</h1>
             <p style={{ textAlign: 'center', marginBottom: 40 }}>Whether you got a question, interested in learning more about Humble Methods, unsure about how AI and automation may take its place in the future, send us an email and we can talk! We are also fluent in Mandarin Chinese!</p>
             <FloatingCircles />
