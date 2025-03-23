@@ -33,6 +33,9 @@ export default function Page({
                 <title>{title} | {date.toDateString()} | by {ownerUsername || ownerUserName || ownerFullName}</title>
                 <meta name="description" content={title + '|' + subtitle} />
                 <meta name="keywords" content={keywords} />
+                <meta property="og:title" content={title} />
+                <meta property="og:type" content="article" />
+                <meta property="og:description" content={keywords} />
             </Head>
             <p>{date.toDateString()}, by {ownerUsername || ownerUserName || ownerFullName}</p>
             <div style={{ display: 'flex', flexWrap: 'wrap' }}>
