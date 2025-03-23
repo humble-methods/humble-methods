@@ -66,6 +66,7 @@ export default function Home() {
       <Head>
         <title>Humble Methods: Automate the Repetitive</title>
         <meta name="description" content="Optimize business operations with automated workflows. Humble Methods leverages AI, Zapier, JavaScript and Python to reduce manual tasks, minimize errors, and improve efficiency. Learn more." />
+        <meta property="og:title" content="Humble Methods: Automate the Repetitive" />
       </Head>
       <Hero />
       <TimeSinkers />
